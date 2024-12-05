@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negocios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <button onclick="mostrarSeccion('verduleria')">Verdulería</button>
+        <button onclick="mostrarSeccion('ferreteria')">Ferretería</button>
+        <button onclick="mostrarSeccion('ciber')">Ciber</button>
+    </nav>
+
+    <section id="verduleria" class="seccion">
+        <h2>Verdulería</h2>
+        <select id="nombreFruta">
+            <option value="">Seleccionar Fruta</option>
+            <option value="Manzana">Manzana</option>
+            <option value="Banana">Banana</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Pera">Pera</option>
+            <option value="Uva">Uva</option>
+            <option value="Kiwi">Kiwi</option>
+            <option value="Mango">Mango</option>
+            <option value="Piña">Piña</option>
+            <option value="Fresa">Fresa</option>
+            <option value="Durazno">Durazno</option>
+        </select>
+    
+        <select id="familiaFruta">
+            <option value="">Seleccionar Familia</option>
+            <option value="Rosáceas">Rosáceas</option>
+            <option value="Cucurbitáceas">Cucurbitáceas</option>
+            <option value="Tropaeoláceas">Tropaeoláceas</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+    
+        <select id="tipoFruta">
+            <option value="">Seleccionar Tipo</option>
+            <option value="Citrus">Citrus</option>
+            <option value="Berries">Berries</option>
+            <option value="Stone Fruit">Stone Fruit</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+    
+        <input type="number" id="precioFruta" placeholder="Precio Unitario">
+        <div>
+            
+            <input type="checkbox" id="organico">
+            <label for="organico">Orgánico</label>
+            
+            <input type="checkbox" id="importado">
+            <label for="importado">Importado</label>
+            
+            <input type="checkbox" id="nacional">
+            <label for="nacional">Nacional</label>
+        </div>
+        
+        <button id="btnGuardarVerduleria" onclick="agregarProductoVerduleria()">Agregar Producto</button>
+        <button onclick="eliminarUltimoProductoVerduleria()">Eliminar Último Producto</button>
+    
+        <table id="tablaVerduleria" style="display:none;">
+            <tr><th>Nombre</th><th>Familia</th><th>Tipo</th><th>Precio</th><th>Atributos</th><th>Acciones</th></tr>
+        </table>
+    </section>
+    
+    
+    
+
+    <section id="ferreteria" class="seccion" style="display:none;">
+        <h2>Ferretería</h2>
+        <select id="nombreProducto">
+            <option value="">Seleccionar Producto</option>
+            <option value="Martillo">Martillo</option>
+            <option value="Destornillador">Destornillador</option>
+            <option value="Sierra">Sierra</option>
+            <option value="Taladro">Taladro</option>
+            <option value="Llave Inglesa">Llave Inglesa</option>
+            <option value="Cinta Métrica">Cinta Métrica</option>
+            <option value="Pincel">Pincel</option>
+            <option value="Tijeras">Tijeras</option>
+            <option value="Alicates">Alicates</option>
+            <option value="Esmeriladora">Esmeriladora</option>
+        </select>
+    
+        <select id="familiaProducto">
+            <option value="">Seleccionar Familia</option>
+            <option value="Herramientas Manuales">Herramientas Manuales</option>
+            <option value="Herramientas Eléctricas">Herramientas Eléctricas</option>
+            <option value="Materiales de Construcción">Materiales de Construcción</option>
+            <option value="Accesorios de Ferretería">Accesorios de Ferretería</option>
+        </select>
+    
+        <select id="tamano">
+            <option value="">Seleccionar Tamaño</option>
+            <option value="Pequeño">Pequeño</option>
+            <option value="Mediano">Mediano</option>
+            <option value="Grande">Grande</option>
+            <option value="Extra Grande">Extra Grande</option>
+        </select>
+    
+        <input type="number" id="precioProducto" placeholder="Precio">
+        <div>
+            <input type="checkbox" id="departamento1"> Electricidad
+            <input type="checkbox" id="departamento2"> Plomería
+            <input type="checkbox" id="departamento3"> Herramientas
+            <input type="checkbox" id="departamento4"> Jardinería
+        </div>
+    
+        <button id="agregarProductoBtn" onclick="agregarProductoFerreteria()">Agregar Producto</button>
+        <button onclick="eliminarUltimoProductoFerreteria()">Eliminar Último Producto</button>
+    
+        <table id="tablaFerreteria" style="display:none;">
+            <tr>
+                <th>Nombre</th>
+                <th>Familia</th>
+                <th>Tamaño</th>
+                <th>Precio</th>
+                <th>Departamento</th>
+                <th>Acciones</th>
+            </tr>
+        </table>
+    </section>
+    
+    
+    
+
+    <section id="ciber" class="seccion" style="display:none;">
+        <h2>Ciber</h2>
+        <input type="text" id="usuario" placeholder="Nombre de Usuario">
+        <input type="number" id="tiempo" placeholder="Tiempo en Minutos">
+        <button class="button" onclick="agregarTiempoCiber()">Agregar Tiempo</button>
+        <button class="button" onclick="eliminarUltimoProducto()">Eliminar Último Producto</button>
+        <table id="tablaCiber">
+            <tr>
+                <th>Computadora</th>
+                <th>IP</th>
+                <th>Usuario</th>
+                <th>Tiempo</th>
+                <th>Precio</th>
+            </tr>
+        </table>
+    </section>
+
+    <script src="verduleria.js"></script>
+    <script src="ferreteria.js"></script>
+    <script src="ciber.js"></script>
+    <script>
+        function mostrarSeccion(seccion) {
+            document.querySelectorAll('.seccion').forEach(sec => sec.style.display = 'none');
+            document.getElementById(seccion).style.display = 'block';
+        }
+    </script>
+
+</body>
+<footer>
+    <p>&copy; 2024 Evidencia 2. Todos los derechos reservados.</p>
+</footer>
+
+</html>
